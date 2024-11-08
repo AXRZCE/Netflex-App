@@ -1,0 +1,45 @@
+<!-- File: res/layout/activity_add_movie.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/editTextYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year" />
+
+    <EditText
+        android:id="@+id/editTextImdbID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="IMDb ID" />
+
+    <EditText
+        android:id="@+id/editTextType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type" />
+
+    <EditText
+        android:id="@+id/editTextPosterUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Poster URL" />
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Movie"
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp" />
+</LinearLayout>
