@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Netflex</string>
+    <string name="app_name">NetFlex</string>
+    <string name="add_movie">Add Movie</string>
 </resources>

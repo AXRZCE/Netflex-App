@@ -1,38 +1,76 @@
-<!-- res/layout/activity_movie_detail.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@android:color/white">
 
+    <!-- Movie Poster Image at the Top -->
     <ImageView
         android:id="@+id/imageViewPosterDetail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true" />
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:background="@android:color/darker_gray"
+        android:layout_alignParentTop="true"/>
 
+    <!-- Movie Title -->
     <TextView
         android:id="@+id/textViewTitleDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:layout_below="@id/imageViewPosterDetail"
+        android:padding="16dp"
+        android:text="Movie Title"
+        android:textSize="22sp"
+        android:textColor="@android:color/black"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewYearDetail"
+    <!-- Movie Year, IMDb ID, Type in a Column Layout -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        android:layout_below="@id/textViewTitleDetail"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
-    <TextView
-        android:id="@+id/textViewImdbIDDetail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textViewYearDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year: 2022"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:paddingBottom="8dp" />
 
-    <TextView
-        android:id="@+id/textViewTypeDetail"
+        <TextView
+            android:id="@+id/textViewImdbIDDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IMDb ID: tt1234567"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textViewTypeDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type: Movie"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp" />
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/primary"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

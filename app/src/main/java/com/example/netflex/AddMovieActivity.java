@@ -1,4 +1,3 @@
-// File: AddMovieActivity.java
 package com.example.netflex;
 
 import android.content.Intent;
@@ -8,6 +7,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AddMovieActivity extends AppCompatActivity {
 
@@ -39,16 +40,34 @@ public class AddMovieActivity extends AppCompatActivity {
             if (title.isEmpty() || year.isEmpty() || imdbID.isEmpty() || type.isEmpty() || posterUrl.isEmpty()) {
                 Toast.makeText(AddMovieActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             } else {
-                // Pass data back to MainActivity
+                // Create a new Movie object and pass it back
+                Movie newMovie = new Movie(title, year, imdbID, type, posterUrl);
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra("title", title);
-                resultIntent.putExtra("year", year);
-                resultIntent.putExtra("imdbID", imdbID);
-                resultIntent.putExtra("type", type);
-                resultIntent.putExtra("posterUrl", posterUrl);
+                resultIntent.putExtra("NEW_MOVIE", newMovie);
                 setResult(RESULT_OK, resultIntent);
                 finish();
             }
         });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.navigation_home) {
+                // Go to Home (MainActivity)
+                Intent homeIntent = new Intent(AddMovieActivity.this, MainActivity.class);
+                startActivity(homeIntent);
+                finish();
+                return true;
+
+            } else if (itemId == R.id.navigation_back) {
+                // Go back to the previous activity
+                onBackPressed();
+                return true;
+            }
+
+            return false;
+        });
+
     }
 }

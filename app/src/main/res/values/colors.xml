@@ -2,4 +2,23 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Primary and Accent colors -->
+    <color name="colorPrimary">#121212</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#1DB954</color>
+
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_icon_color">#FFFFFF</color>
+    <color name="bottom_nav_text_color">#FFFFFF</color>
+
+    <!-- Background Color -->
+    <color name="backgroundColor">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+
+    <color name="primary">#000000</color> <!-- Black for a Vercel-like theme -->
+    <color name="primary_variant">#FFFFFF</color> <!-- White or any other contrasting color if needed -->
+    <color name="secondary">#888888</color> <!-- Gray for secondary elements, optional -->
 </resources>

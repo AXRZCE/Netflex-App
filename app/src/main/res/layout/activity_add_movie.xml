@@ -1,45 +1,101 @@
 <!-- File: res/layout/activity_add_movie.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@android:color/white">
 
+    <!-- Title input -->
     <EditText
         android:id="@+id/editTextTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title" />
+        android:hint="Title"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/secondary"
+        android:backgroundTint="@color/primary"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:inputType="text" />
 
+    <!-- Year input -->
     <EditText
         android:id="@+id/editTextYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Year" />
+        android:hint="Year"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/secondary"
+        android:backgroundTint="@color/primary"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:inputType="number" />
 
+    <!-- IMDb ID input -->
     <EditText
         android:id="@+id/editTextImdbID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="IMDb ID" />
+        android:hint="IMDb ID"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/secondary"
+        android:backgroundTint="@color/primary"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:inputType="text" />
 
+    <!-- Type input -->
     <EditText
         android:id="@+id/editTextType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type" />
+        android:hint="Type"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/secondary"
+        android:backgroundTint="@color/primary"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:inputType="text" />
 
+    <!-- Poster URL input -->
     <EditText
         android:id="@+id/editTextPosterUrl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Poster URL" />
+        android:hint="Poster URL"
+        android:textColor="@color/primary"
+        android:textColorHint="@color/secondary"
+        android:backgroundTint="@color/primary"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:inputType="textUri" />
 
+    <!-- Submit button -->
     <Button
         android:id="@+id/buttonSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Movie"
-        android:layout_gravity="center_horizontal"
-        android:padding="8dp" />
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/primary"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Spacer to push navigation bar to the bottom -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_nav_menu" />
 </LinearLayout>
